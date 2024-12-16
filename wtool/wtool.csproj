@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="Dalamud.Plugin.Bootstrap.targets"/>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <OutputPath>D:\ff\mytool\s</OutputPath>
+        <OutputType>Library</OutputType>
+        <PublishSingleFile>true</PublishSingleFile>
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <PlatformTarget>x64</PlatformTarget>
+        <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+        <Private>False</Private>
+        <RootNamespace>whook</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\Data\goat.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Visible>false</Visible>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="Dalamud">
+            <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\Dalamud.dll</HintPath>
+        </Reference>
+        <Reference Include="ECommons">
+            <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\ECommons.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="event\"/>
+        <Folder Include="whelp\opcode\"/>
+    </ItemGroup>
+</Project>
