@@ -31,12 +31,14 @@
             <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\Dalamud.dll</HintPath>
         </Reference>
         <Reference Include="ECommons">
-            <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\ECommons.dll</HintPath>
+          <HintPath>..\..\..\..\..\ff\ae\AEAssistCNVersion\AEAssist\ECommons.dll</HintPath>
+        </Reference>
+        <Reference Include="OmenTools">
+          <HintPath>..\..\..\OmenTools\bin\Debug\OmenTools.dll</HintPath>
         </Reference>
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="event\"/>
-        <Folder Include="whelp\opcode\"/>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 </Project>

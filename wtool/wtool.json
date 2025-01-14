@@ -1,12 +1,12 @@
 {
     "Author": "xww",
     "Name": "wtool",
-    "Punchline": "A short one-liner that shows up in /xlplugins.",
-    "Description": "A description that shows up in /xlplugins. List any major slash-command(s).",
+    "Punchline": "挂比用的",
+    "Description": "",
     "ApplicableVersion": "any",
     "Tags": [
         "sample",
-        "plugin",
-        "goats"
-    ]
+        "plugin"
+    ],
+    "IconUrl": ""
 }
