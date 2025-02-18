@@ -20,18 +20,16 @@ public struct Tp
     public bool Isopen;
 }
 
-
-
 public class Config
 {
     public static Config Instance = new();
     public static string path;
-    public string ospath;
-
-    public  List<Whitelist> Whitelist;
     public Move move;
+    public string ospath;
     public Tp tp;
-    
+
+    public List<Whitelist> Whitelist;
+
     public static void init()
     {
         Instance = new Config();
@@ -40,9 +38,9 @@ public class Config
         for (var i = 0; i < s.Length - 1; i++) Instance.ospath += s[i] + @"\";
         if (!File.Exists(path))
         {
-            Instance.Whitelist = new();
+            Instance.Whitelist = new List<Whitelist>();
             Instance.move = new Move();
-            Instance.tp = new();
+            Instance.tp = new Tp();
             Instance.Save();
             return;
         }
@@ -56,11 +54,12 @@ public class Config
         {
             DService.Log.Debug(e.ToString());
         }
-        
     }
+
     public void Save()
     {
         Directory.CreateDirectory(Path.GetDirectoryName(path));
         File.WriteAllText(path, JsonConvert.SerializeObject(Instance, Formatting.Indented));
+        return;
     }
 }

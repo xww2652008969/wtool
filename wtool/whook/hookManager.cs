@@ -9,23 +9,14 @@ public static class hookManager
     {
         // 移动
         if (Config.Instance.move.Isopen)
-        {
             whook.Move.Enable();
-        }
         else
-        {
             whook.Move.Disable();
-        }
         //tp
         if (Config.Instance.tp.Isopen)
-        {
             whook.Tp.Enable();
-        }
         else
-        {
             whook.Tp.Uninit();
-        }
-        
     }
 
     public static void Initialize()

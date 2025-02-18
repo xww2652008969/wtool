@@ -1,5 +1,7 @@
 ﻿using Dalamud.Interface.Windowing;
+using Dalamud.IoC;
 using Dalamud.Plugin;
+using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using OmenTools;
 using whook.Windows;
 
@@ -7,21 +9,21 @@ namespace whook;
 
 public sealed class Plugin : IDalamudPlugin
 {
+    [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
     public readonly WindowSystem WindowSystem = new("wtool");
-    public Plugin(IDalamudPluginInterface pi)
+    private MainWindow MainWindow { get; init; }
+    public Plugin()
     {
-        Glo.Glo.Pi = pi;
+        Glo.Glo.Pi = PluginInterface;
         Glo.Glo.Open = false;
         DService.Init(Glo.Glo.Pi);
         Config.init();
         MainWindow = new MainWindow();
         WindowSystem.AddWindow(MainWindow);
-        pi.UiBuilder.Draw += DrawUi;
-        pi.UiBuilder.OpenMainUi += ToggleMainUi;
-        
+        PluginInterface.UiBuilder.Draw += DrawUi;
+        PluginInterface.UiBuilder.OpenMainUi += ToggleMainUi;
     }
-
-    private MainWindow MainWindow { get; init; }
+    
 
     public void Dispose()
     {
@@ -40,5 +42,4 @@ public sealed class Plugin : IDalamudPlugin
     {
         MainWindow.Toggle();
     }
-    
 }

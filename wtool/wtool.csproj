@@ -15,30 +15,50 @@
         <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
-        <Private>False</Private>
         <RootNamespace>whook</RootNamespace>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
-
-    <ItemGroup>
-        <Content Include="..\Data\goat.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <Visible>false</Visible>
-        </Content>
-    </ItemGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+      <Optimize>true</Optimize>
+      <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+      <DebugType>none</DebugType>
+      <NoWarn>1701;1702;1416</NoWarn>
+      <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+      <DebugType>none</DebugType>
+    </PropertyGroup>
 
     <ItemGroup>
         <Reference Include="Dalamud">
             <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\Dalamud.dll</HintPath>
+            <Private>False</Private>
         </Reference>
-        <Reference Include="ECommons">
-          <HintPath>..\..\..\..\..\ff\ae\AEAssistCNVersion\AEAssist\ECommons.dll</HintPath>
+        <Reference Include="DotNetDetour">
+          <HintPath>C:\Users\xww\.nuget\packages\jlion.dotnetdetour\1.0.4\lib\DotNetDetour.dll</HintPath>
+        </Reference>
+        <Reference Include="FFXIVClientStructs">
+          <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\FFXIVClientStructs.dll</HintPath>
+        </Reference>
+        <Reference Include="ImGui.NET">
+          <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\ImGui.NET.dll</HintPath>
+        </Reference>
+        <Reference Include="Lumina">
+          <HintPath>C:\Users\xww\AppData\Roaming\XIVLauncherCN\addon\Hooks\dev\Lumina.dll</HintPath>
         </Reference>
         <Reference Include="OmenTools">
-          <HintPath>..\..\..\OmenTools\bin\Debug\OmenTools.dll</HintPath>
+            <HintPath>..\..\..\OmenTools\bin\Debug\OmenTools.dll</HintPath>
+            <Private>False</Private>
         </Reference>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="EasyHook" Version="2.7.7097" />
+        <PackageReference Include="Jlion.DotNetDetour" Version="1.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 </Project>

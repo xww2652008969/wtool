@@ -4,9 +4,30 @@
     "net8.0": {
       "DalamudPackager": {
         "type": "Direct",
-        "requested": "[2.1.13, )",
-        "resolved": "2.1.13",
-        "contentHash": "rMN1omGe8536f4xLMvx9NwfvpAc9YFFfeXJ1t4P4PE6Gu8WCIoFliR1sh07hM+bfODmesk/dvMbji7vNI+B/pQ=="
+        "requested": "[11.0.0, )",
+        "resolved": "11.0.0",
+        "contentHash": "bjT7XUlhIJSmsE/O76b7weUX+evvGQctbQB8aKXt94o+oPWxHpCepxAGMs7Thow3AzCyqWs7cOpp9/2wcgRRQA=="
+      },
+      "EasyHook": {
+        "type": "Direct",
+        "requested": "[2.7.7097, )",
+        "resolved": "2.7.7097",
+        "contentHash": "DCx3T5I1D5zo6BIjiEjE/1Wlsm0UPw9Z0DlQ9Wz12YSBohQMD4vlt03OPXfb5+MQ2WeieqVKYXvwNhnT/E+fbg=="
+      },
+      "Jlion.DotNetDetour": {
+        "type": "Direct",
+        "requested": "[1.0.4, )",
+        "resolved": "1.0.4",
+        "contentHash": "YQnwfOxIEnyP/IqskyfNWLXxtm5rHap9LK/TN1BgGDBs/hVxmShaDD6k325z3Jwv7ySHO1rDVDpesVeTSxbB+A=="
+      },
+      "Lib.Harmony": {
+        "type": "Direct",
+        "requested": "[2.3.3, )",
+        "resolved": "2.3.3",
+        "contentHash": "qxO8d2q7luoY8mTfCStQFOgRSd3dWZSS0Ffi5nrjX4qFkZxEBAEvNh5b/ZejTl2kY0fJs62LmfRJkBBTeiuuyQ==",
+        "dependencies": {
+          "System.Text.Json": "8.0.1"
+        }
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
@@ -19,6 +40,19 @@
         "requested": "[13.0.3, )",
         "resolved": "13.0.3",
         "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
+      },
+      "System.Text.Encodings.Web": {
+        "type": "Transitive",
+        "resolved": "8.0.0",
+        "contentHash": "yev/k9GHAEGx2Rg3/tU6MQh4HGBXJs70y7j1LaM1i/ER9po+6nnQ6RRqTJn1E7Xu0fbIFK80Nh5EoODxrbxwBQ=="
+      },
+      "System.Text.Json": {
+        "type": "Transitive",
+        "resolved": "8.0.1",
+        "contentHash": "7AWk2za1hSEJBppe/Lg+uDcam2TrDqwIKa9XcPssSwyjC2xa39EKEGul3CO5RWNF+hMuZG4zlBDrvhBdDTg4lg==",
+        "dependencies": {
+          "System.Text.Encodings.Web": "8.0.0"
+        }
       }
     }
   }
